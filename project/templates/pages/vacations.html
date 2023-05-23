@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<link rel="stylesheet" href="style/vacations.css">
+{% endblock styles %}
+
+{% block content %}
+<h2>Submitted Vacations</h2>
+<br>
+<div class="tData">
+    <table style="text-align: center;" id="table"></table>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script src="js/vacations.js" type="module"></script>
+{% endblock scripts %}

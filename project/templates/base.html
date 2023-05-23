@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Website</title>
+    <link rel="icon" href="{% static 'images/resources.png' %}">
+    <link rel="stylesheet" href="{% static 'style/general.css' %}">
+    {% block styles %}
+    {% endblock styles %}
+</head>
+
+<body>
+    <header>
+        <!-- logo -->
+        <div>
+            <a href="login.html" title="Go to login page"><img src="{% static 'images/resources.png' %}" alt="HR-image" width="50"></a>
+        </div>
+        <!-- navbar -->
+        <nav>
+            <li>
+                <a href="home.html">Home</a>
+            </li>
+            <li>
+                <a href="add.html">Add Employee</a>
+            </li>
+            <li>
+                <a href="vacations.html">Submitted Vacations</a>
+            </li>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+    <footer>
+        <h4>&copy; 2023 <span>FCAI-CU</span>. All rights reserved</h4>
+    </footer>
+    {% block scripts %}
+    {% endblock scripts %}
+</body>
+
+</html>

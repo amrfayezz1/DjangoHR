@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'style/vacform.css' %}">
+{% endblock styles %}
+
+{% block content %}
+<form id="vac-form" class="vacf">
+    <h2>Submit Vacation Form:</h2>
+    <label>ID: </label>
+    <input type="text" name="id" disabled><br>
+    <label>Name: </label>
+    <input type="text" name="name" disabled><br>
+    <label for="from">From Date: </label>
+    <input type="date" name="from" id="from" required> <br>
+    <label for="to">To Date: </label>
+    <input type="date" name="to" id="to" required> <br>
+    <label for="reason">Reason: </label><br>
+    <textarea name="reason" id="reason" cols="30" rows="10" placeholder="Enter reason for vacation"
+        required></textarea><br>
+    <input class="submit" type="submit" value="Submit">
+</form>
+{% endblock content %}
+
+{% block scripts %}
+<script src="{% static 'js/vacForm.js' %}" type="module"></script>
+{% endblock scripts %}

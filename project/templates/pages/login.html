@@ -1,0 +1,37 @@
+{% load static %}
+<html>
+
+<head>
+    <title>HR | Login</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'images/resources.png' %}">
+    <link rel="stylesheet" href="{% static 'style/login.css' %}">
+
+</head>
+
+<body class="wrap">
+
+    <div class="content">
+        <img src="{% static 'images/resources.png' %}" width="50">
+        <div class="container">
+            <div class="login">
+                <form id="login-form">
+                    <img class="bg" src="images/bg1.jpg">
+                    <h1>Login Page</h1>
+                    <label for="username">Username: </label><br>
+                    <input type="text" id="username" name="username" placeholder=" Enter Username"><br><br>
+                    <label for="password">Password: </label><br>
+                    <input type="password" id="password" name="password" placeholder=" Enter Password"><br><br>
+                    <input class="sub" type="submit" value="Login">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/login.js' %}"></script>
+    {% comment %} <script type="module" src="js/data.js"></script>
+    <script type="module" src="js/forms.js"></script> {% endcomment %}
+</body>
+
+</html>

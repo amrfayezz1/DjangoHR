@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'style/home.css' %}">
+{% endblock styles %}
+
+{% block content %}
+<h1 style="text-align: center;">
+    Welcome to HR Insight
+</h1>
+<h3>
+    <b>Gain Valuable Insights into the World of HR</b>
+</h3>
+<div>
+    <h3>To Search for an Employee:</h3>
+    <form id="search">
+        <input type="search" name="search" placeholder="Search by name" id="sName">
+        <button type="submit" id="sBtn">Search</button>
+    </form>
+</div>
+<br>
+<button id="btn">Show All Info</button>
+<div class="tData">
+    <table style="text-align: center;" id="table"></table>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script type="module" src="js/table.js"></script>
+{% endblock scripts %}

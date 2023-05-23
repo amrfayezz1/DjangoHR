@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'style/edit.css' %}">
+{% endblock styles %}
+
+{% block content %}
+<div class="content">
+    <div class="container">
+        <div class="form">
+            <form action="home.html" method="post">
+                <h2>Edit Employee</h2>
+                <label for="id">ID:</label>
+                <input type="number" name="id" placeholder="Id" required><br>
+                <label for="name">Name:</label>
+                <input type="text" name="name" placeholder="Name" id="name" required><br>
+                <label for="email">Email:</label>
+                <input type="text" name="email" placeholder="Email" id="email"><br>
+                <label for="address">Address:</label>
+                <input type="text" name="address" placeholder="Address"><br>
+                <label for="phone">Phone Number:</label>
+                <input type="text" name="phone" placeholder="Phone" id="phone"><br>
+                <label for="gender">Gender:</label>
+                <input type="radio" name="gender" value="male"><label>Male</label>
+                <input type="radio" name="gender" value="female"><label>Female</label><br>
+                <label for="marital_status">Marital Status:</label>
+                <select name="marital_status" id="marital_status">
+                    <option value=""></option>
+                    <option value="single">Single</option>
+                    <option value="taken">Taken</option>
+                    <option value="married">Married</option>
+                    <option value="divorced">Divorced</option>
+                    <option value="widowed">Widowed</option>
+                </select><br>
+                <label for="vacation_left">Remaining Vacation Days:</label>
+                <input type="number" name="vacation_left" placeholder="Remaining Vacation Days" required><br>
+                <label for="vacation_approved">Approved Vacation Days:</label>
+                <input type="number" name="vacation_approved" placeholder="Approved Vacation Days" required><br>
+                <label for="salary">Salary:</label>
+                <input type="text" name="salary" placeholder="Salary" id="salary"><br>
+                <label for="birth">Date Of Birth:</label>
+                <input type="date" name="birth" placeholder="Date of Birth"><br><br>
+                <input class="sub" type="button" value="Delete" id="del">
+                <input class="sub" type="submit" value="Update" id="update" onclick="validateForm()">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script type="module" src="js/edit.js"></script>
+{% endblock scripts %}

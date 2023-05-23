@@ -1,0 +1,76 @@
+:root {
+    --grey: #C9D1D5;
+    --darkgrey: #818c98;
+    --darkblue: #0C243C;
+    --turquoise: #55C2C3;
+    --applewhite: #fbfbfb;
+    --darkturq: #49babc;
+}
+h2{
+    font-size: xx-large;
+}
+.submit:hover{
+    background-color: var(--applewhite);
+    color: var(--darkblue);
+    border: none;
+}
+.submit{
+    background: var(--darkblue);
+    color: var(--applewhite);
+    margin: 0 auto;
+    font-size: 14px;
+    padding:5px 30px;
+    font-weight: 300;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border: none;
+}
+label{
+    color: var(--darkblue);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.vacf {
+    margin: 30px auto;
+    background-color: var(--turquoise);
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.vacf input[type=text]{
+    background-color: var(--applewhite);
+    border-radius: 20px;
+    height: 3vh;
+    border: none;
+}
+.vacf input[type=date]{
+    background-color: var(--applewhite);
+    border-radius: 20px;
+    height: 3vh;
+    width: 150px;
+    border: none;
+}
+.vacf textarea{
+    border-radius: 20px;
+    background-color: var(--applewhite);
+    width: 400px;
+    height: 30;
+    margin-left: auto;
+    border-color: var(--turquoise);
+    border: none;
+}
+textarea{
+    font-size: larger;
+    padding-top: 5px;
+    padding-left: 20px;
+}
+
+
+input, textarea{
+    margin: 5px;
+}

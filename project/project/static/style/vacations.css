@@ -1,0 +1,48 @@
+:root {
+    --grey: #C9D1D5;
+    --darkgrey: #818c98;
+    --darkblue: #0C243C;
+    --turquoise: #55C2C3;
+    --applewhite: #fbfbfb;
+    --darkturq: #4eb3b5;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 25px auto;
+}
+
+th,
+td {
+    text-align: center;
+    padding: 16px;
+    border-bottom: 1px solid var(--grey);
+}
+
+
+.accept,
+.reject {
+    background-color: var(--darkturq);
+    color: var(--applewhite);
+    font-size: 15px;
+    border-radius: 15px;
+    border: none;
+    text-decoration: none;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.accept:hover,
+.reject:hover {
+    background-color: var(--darkblue);
+    color: var(--applewhite);
+    border-radius: 15px;
+    border: none;
+    text-decoration: none;
+    padding: 8px;
+}
+
+.tData {
+    margin: auto;
+    overflow-x: auto;
+}

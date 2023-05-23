@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    position: relative;
+    min-height: 100vh;
+    max-width: 100vw;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+    background-color: #050303;
+}
+body::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    filter: brightness(0.3);
+}
+
+main{
+    position: relative;
+    padding-top: 1px;
+}
+
+h1{
+    margin-top: 50px;
+}
+
+.parent{
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    margin: 40px auto;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: transparent;
+}
+
+section section{
+    width: 50%;
+    min-width: 300px;
+    margin: 0 auto;
+}
+
+a{
+    color: #050303;
+}
+button{
+    outline: none;
+    border: none;
+    height: 50px;
+    width: 130px;
+    background-color: white;
+    color: #050303;
+    border-radius: 16px;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin: 40px 0;
+}
+
+.college{
+    transform: scale(2);
+}
+
+.photo, .hr{
+    cursor: pointer;
+}
+.hr{
+    transition: background-color 1s, color 1s;
+}
+.photo:hover ~ .hr, .hr:hover{
+    background-color: #300a09;
+    color: white;
+}
+
+.btn{
+    position: relative;
+}
+.btn::after{
+    content: "Not Available";
+    font-size: small;
+    padding-top: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 120px;
+    height: 35px;
+    background-color: #ffffffbb;
+    border: 2px solid black;
+    border-radius: 50%;
+    color: black;
+    position: absolute;
+    top: -45px;
+    right: -110px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.btn:hover::after{
+    opacity: 1;
+}
