@@ -17,18 +17,19 @@
     <header>
         <!-- logo -->
         <div>
-            <a href="login.html" title="Go to login page"><img src="{% static 'images/resources.png' %}" alt="HR-image" width="50"></a>
+            <a href="{% url 'login' %}" title="Go to login page"><img src="{% static 'images/resources.png' %}"
+                    alt="HR-image" width="50"></a>
         </div>
         <!-- navbar -->
         <nav>
             <li>
-                <a href="home.html">Home</a>
+                <a href="{% url 'home' %}">Home</a>
             </li>
             <li>
-                <a href="add.html">Add Employee</a>
+                <a href="{% url 'add' %}">Add Employee</a>
             </li>
             <li>
-                <a href="vacations.html">Submitted Vacations</a>
+                <a href="{% url 'vacations' %}">Submitted Vacations</a>
             </li>
         </nav>
     </header>
