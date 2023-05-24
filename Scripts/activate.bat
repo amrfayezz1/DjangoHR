@@ -1,4 +1,4 @@
-@set "VIRTUAL_ENV=C:\Users\amrfa\Desktop\test"
+@set "VIRTUAL_ENV=C:\Users\LAPTOP\Desktop\DjangoHR"
 
 @if defined _OLD_VIRTUAL_PROMPT (
     @set "PROMPT=%_OLD_VIRTUAL_PROMPT%"
