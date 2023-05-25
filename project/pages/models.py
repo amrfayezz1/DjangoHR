@@ -24,7 +24,7 @@ class Employee(models.Model):
     Gender = models.CharField(max_length=6, choices=GENDER_CHOICES)
     Marital_status = models.CharField(max_length=10, choices=MARITAL_STATUS_CHOICES)
 
-class Vacations(models.Model):
+class Vacation(models.Model):
     Employee_ID = models.ForeignKey(Employee, null=True, on_delete=models.CASCADE)
     Name = models.CharField(max_length=15)
     From = models.DateField()

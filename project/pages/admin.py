@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Vacations,Employee
+from .models import Vacation,Employee
 admin.site.register(Employee)
-admin.site.register(Vacations)
+admin.site.register(Vacation)
 
