@@ -1,14 +1,44 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block styles %}
-<link rel="stylesheet" href="style/vacations.css">
+<link rel="stylesheet" href="{% static 'style/vacations.css' %}">
 {% endblock styles %}
 
 {% block content %}
 <h2>Submitted Vacations</h2>
 <br>
 <div class="tData">
-    <table style="text-align: center;" id="table"></table>
+    <table style="text-align: center;" id="table">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Remaining Vacation Days</th>
+            <th>Approved Vacation Days</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Reason</th>
+            <th>Status</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            {% for vac in vacations %}
+            <tr>
+                <td>{{vac.Employee_ID}}</td>
+                <td>{{vac.Name}}</td>
+                <td>{{vac.Employee_ID.Remaining_vacation_days}}</td>
+                <td>{{vac.Employee_ID.Approved_vacation_days}}</td>
+                <td>{{vac.From}}</td>
+                <td>{{vac.To}}</td>
+                <td>{{vac.Reason}}</td>
+                <td>{{vac.Status}}</td>
+                <td><button class='accept'>Approve</button></td>
+                <td><button class='reject'>Decline</button></td>
+            </tr>
+            {% endfor %}
+        </tr>
+    </table>
 </div>
 {% endblock content %}
 

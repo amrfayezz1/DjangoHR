@@ -12,37 +12,37 @@
             <form action="home.html" method="post">
                 <h2>Edit Employee</h2>
                 <label for="id">ID:</label>
-                <input type="number" name="id" placeholder="Id" required><br>
+                <input type="number" name="id" placeholder="Id" value="{{emp.ID}}" required disabled><br>
                 <label for="name">Name:</label>
-                <input type="text" name="name" placeholder="Name" id="name" required><br>
+                <input type="text" name="name" placeholder="Name" value="{{emp.Name}}" id="name" required><br>
                 <label for="email">Email:</label>
-                <input type="text" name="email" placeholder="Email" id="email"><br>
+                <input type="text" name="email" placeholder="Email" value="{{emp.Email}}" id="email"><br>
                 <label for="address">Address:</label>
-                <input type="text" name="address" placeholder="Address"><br>
+                <input type="text" name="address" placeholder="Address" value="{{emp.Address}}"><br>
                 <label for="phone">Phone Number:</label>
-                <input type="text" name="phone" placeholder="Phone" id="phone"><br>
+                <input type="text" name="phone" placeholder="Phone" value="{{emp.Phone}}" id="phone"><br>
                 <label for="gender">Gender:</label>
-                <input type="radio" name="gender" value="male"><label>Male</label>
-                <input type="radio" name="gender" value="female"><label>Female</label><br>
+                <input type="radio" name="gender" value="male" {% if emp.Gender == "male" %}checked{% endif %}><label>Male</label>
+                <input type="radio" name="gender" value="female" {% if emp.Gender == "female" %}checked{% endif %}><label>Female</label><br>
                 <label for="marital_status">Marital Status:</label>
                 <select name="marital_status" id="marital_status">
-                    <option value=""></option>
-                    <option value="single">Single</option>
-                    <option value="taken">Taken</option>
-                    <option value="married">Married</option>
-                    <option value="divorced">Divorced</option>
-                    <option value="widowed">Widowed</option>
+                <option value=""></option>
+                <option value="single" {% if emp.Marital_status == "single" %}selected{% endif %}>Single</option>
+                <option value="taken" {% if emp.Marital_status == "taken" %}selected{% endif %}>Taken</option>
+                <option value="married" {% if emp.Marital_status == "married" %}selected{% endif %}>Married</option>
+                <option value="divorced" {% if emp.Marital_status == "divorced" %}selected{% endif %}>Divorced</option>
+                <option value="widowed" {% if emp.Marital_status == "widowed" %}selected{% endif %}>Widowed</option>
                 </select><br>
                 <label for="vacation_left">Remaining Vacation Days:</label>
-                <input type="number" name="vacation_left" placeholder="Remaining Vacation Days" required><br>
+                <input type="number" name="vacation_left" placeholder="Remaining Vacation Days" value="{{emp.Remaining_vacation_days}}" required><br>
                 <label for="vacation_approved">Approved Vacation Days:</label>
-                <input type="number" name="vacation_approved" placeholder="Approved Vacation Days" required><br>
+                <input type="number" name="vacation_approved" placeholder="Approved Vacation Days" value="{{emp.Approved_vacation_days}}" required><br>
                 <label for="salary">Salary:</label>
-                <input type="text" name="salary" placeholder="Salary" id="salary"><br>
+                <input type="text" name="salary" placeholder="Salary" value="{{emp.Salary}}" id="salary"><br>
                 <label for="birth">Date Of Birth:</label>
-                <input type="date" name="birth" placeholder="Date of Birth"><br><br>
+                <input type="date" name="birth" placeholder="Date of Birth" value="{{emp.Date_of_birth|date:'Y-m-d'}}"><br><br>
                 <input class="sub" type="button" value="Delete" id="del">
-                <input class="sub" type="submit" value="Update" id="update" onclick="validateForm()">
+                <input class="sub" type="submit" value="Update" id="update">
             </form>
         </div>
     </div>

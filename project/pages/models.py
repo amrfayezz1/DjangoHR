@@ -14,8 +14,10 @@ class Employee(models.Model):
         ('widowed', 'Widowed'),
     ]
 
-    ID = models.AutoField(primary_key=True)
+    ID = models.IntegerField(primary_key=True)
     Name = models.CharField(max_length=15)
+    Remaining_vacation_days = models.IntegerField(default=30)
+    Approved_vacation_days = models.IntegerField(default=0)
     Email = models.EmailField(max_length=254)
     Address = models.CharField(max_length=100)
     Phone = models.CharField(max_length=11)
@@ -24,9 +26,16 @@ class Employee(models.Model):
     Gender = models.CharField(max_length=6, choices=GENDER_CHOICES)
     Marital_status = models.CharField(max_length=10, choices=MARITAL_STATUS_CHOICES)
 
+    def __str__(self):
+        return str(self.ID)
+
 class Vacation(models.Model):
-    Employee_ID = models.ForeignKey(Employee, null=True, on_delete=models.CASCADE)
+    Employee_ID = models.ForeignKey(Employee, on_delete=models.CASCADE)
     Name = models.CharField(max_length=15)
     From = models.DateField()
     To = models.DateField()
     Reason = models.TextField()
+    Status = models.TextField(default='Submitted')
+
+    def __str__(self):
+        return self.Name

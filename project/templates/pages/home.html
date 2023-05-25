@@ -20,9 +20,39 @@
     </form>
 </div>
 <br>
-<button id="btn">Show All Info</button>
 <div class="tData">
-    <table style="text-align: center;" id="table"></table>
+    <table style="text-align: center;" id="table">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>remaining vacation days</th>
+            <th>approved vacation days</th>
+            <th>Email</th>
+            <th>address</th>
+            <th>phone no.</th>
+            <th>gender</th>
+            <th>marital status</th>
+            <th>salary</th>
+            <th>date of birth</th><th></th><th></th>
+        </tr>
+        {% for emp in employees %}
+        <tr>
+            <td>{{emp.ID}}</td>
+            <td>{{emp.Name}}</td>
+            <td>{{emp.Remaining_vacation_days}}</td>
+            <td>{{emp.Approved_vacation_days}}</td>
+            <td>{{emp.Email}}</td>
+            <td>{{emp.Address}}</td>
+            <td>{{emp.Phone}}</td>
+            <td>{{emp.Gender}}</td>
+            <td>{{emp.Marital_status}}</td>
+            <td>{{emp.Salary}}</td>
+            <td>{{emp.Date_of_birth}}</td>
+            <td><a class='link' href="{% url 'edit' id=emp.ID %}">Edit</a></td>
+            <td class='add'><a class='link' href="{% url 'vacForm' id=emp.ID %}">Add Vacation</a></td>
+        </tr>
+        {% endfor %}
+    </table>
 </div>
 {% endblock content %}
 
