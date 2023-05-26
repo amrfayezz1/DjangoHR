@@ -1,3 +1,4 @@
+import json
 from django.shortcuts import render
 from django.http import JsonResponse
 from .models import Employee, Vacation
@@ -36,6 +37,7 @@ def index(request):
 
 def login(request):
     return render(request, 'pages/login.html')
+
 
 def addEmp(request):
     print("I Exist!")
