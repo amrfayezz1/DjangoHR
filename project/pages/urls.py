@@ -11,4 +11,6 @@ urlpatterns = [
     path('login/', views.login, name='login'),
 
     path('addEmp/', views.addEmp, name='addEmp'),
+    path('approveVac/<int:id>/', views.approveVac, name='approveVac'),
+    path('declineVac/<int:id>/', views.declineVac, name='declineVac'),
 ]

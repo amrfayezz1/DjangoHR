@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from .models import Employee, Vacation, Admin
 from django.shortcuts import redirect
-from django.utils import timezone
 
 # Create your views here.
 
@@ -83,27 +82,29 @@ def addEmp(request):
                 Gender=request.POST['gender'],
                 Marital_status=request.POST['marital'],
             )
-            print(data)
             data.save()
             return home(request)
     else:
         return redirect('login')
 
 
-def vacApprove(request, id):
-
+def approveVac(request, id):
     if 'username' in request.session and not request.session['username'] == '':
-        vac = Vacation.objects.select_related(
-            'Employee_ID').get(Employee_ID=id)
-        print(vac.Employee_ID.Name)
+        vac = Vacation.objects.select_related('Employee_ID').get(Employee_ID=id)
         vac.Status = "Approved"
-        start_date = timezone.make_aware(vac.From)
-        end_date = timezone.make_aware(vac.To)
-        number_of_days = start_date - end_date
-        vac.Employee_ID.Approved_vacation_days += number_of_days
+        number_of_days = vac.To - vac.From
+        vac.Employee_ID.Approved_vacation_days += number_of_days.days
+        vac.Employee_ID.Remaining_vacation_days -= number_of_days.days
+        vac.Employee_ID.save()
         vac.delete()
-        vac.save()
         return redirect('home')
-
+    else:
+        return redirect('login')
+    
+def declineVac(request, id):
+    if 'username' in request.session and not request.session['username'] == '':
+        vac = Vacation.objects.select_related('Employee_ID').get(Employee_ID=id)
+        vac.delete()
+        return redirect('home')
     else:
         return redirect('login')
