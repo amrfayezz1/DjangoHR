@@ -31,6 +31,9 @@
             <li>
                 <a href="{% url 'vacations' %}">Submitted Vacations</a>
             </li>
+            <li>
+                <a href="{% url 'login' %}">Log Out</a>
+            </li>
         </nav>
     </header>
     <main>
@@ -51,6 +54,8 @@
             }
         });
     </script>
+    {% block scripts %}
+    {% endblock scripts %}
 </body>
 
 </html>

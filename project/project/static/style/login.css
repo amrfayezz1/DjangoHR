@@ -137,3 +137,18 @@ img {
     left: 5px;
     top: 5px;
 }
+
+.error_login{
+    display: block;
+    background-color: #fa4968;
+    color: white;
+    font-weight: 900;
+    font-size: large;
+    position: absolute;
+    top: 35px;
+    height: 30px;
+    width: 250px;
+    padding-top: 10px;
+    border-radius: 15px;
+    text-align: center;
+}

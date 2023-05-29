@@ -17,7 +17,11 @@
         <img src="{% static 'images/resources.png' %}" width="50">
         <div class="container">
             <div class="login">
-                <form id="login-form">
+                {% if error_message %}
+                    <p class="error_login">{{ error_message }}</p>
+                {% endif %}
+                <form id="login-form" method="POST">
+                    {% csrf_token %}
                     <img class="bg" src="{% static 'images/bg1.jpg'%}">
                     <h1>Login Page</h1>
                     <label for="username">Username: </label><br>

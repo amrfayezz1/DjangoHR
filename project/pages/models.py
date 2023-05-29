@@ -44,3 +44,9 @@ class Vacation(models.Model):
 
     def __str__(self):
         return self.Name
+
+class Admin(models.Model):
+    Username = models.CharField(max_length=25)
+    Password = models.CharField(max_length=25)
+    def __str__(self):
+        return self.Username

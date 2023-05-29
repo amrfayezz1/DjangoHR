@@ -60,6 +60,9 @@
     </table>
 </div>
 
+{% endblock content %}
+
+{% block scripts %}
 <script>
     function searchEmp() {
     let search = document.getElementById("sName").value.toLowerCase();
@@ -73,15 +76,9 @@
         }
     });
     }
-
     document.getElementById("sBtn").addEventListener("click", function(event) {
     event.preventDefault();
     searchEmp();
 });
 </script>
-
-{% endblock content %}
-
-{% comment %} {% block scripts %}
-
-{% endblock scripts %} {% endcomment %}
+{% endblock scripts %}
