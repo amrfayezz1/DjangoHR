@@ -109,11 +109,10 @@ def declineVac(request, id):
     else:
         return redirect('login')
     
-def updateEmp(request):
+def updateEmp(request, id):
     if 'username' in request.session and not request.session['username'] == '':
         if request.method == 'POST':
-            emp = Employee.objects.get(ID = request.POST['id'])
-            emp.ID = request.POST['id']
+            emp = Employee.objects.get(ID = id)
             emp.Name = request.POST['name']
             emp.Email = request.POST['email']
             emp.Address = request.POST['address']
@@ -125,27 +124,15 @@ def updateEmp(request):
             emp.Salary = request.POST['salary']
             emp.Date_of_birth = request.POST['birth']
             emp.save()
-            return home(request)
+        return redirect('home')
     else:
        return redirect('login')
 
-def deleteEmp(request):
+def deleteEmp(request, id):
     if 'username' in request.session and not request.session['username'] == '':
-        if request.method == 'POST':
-            emp = Employee.objects.get(ID = request.POST['id'])
-            emp.ID = request.POST['id']
-            emp.Name = request.POST['name']
-            emp.Email = request.POST['email']
-            emp.Address = request.POST['address']
-            emp.Phone = request.POST['phone']
-            emp.Gender = request.POST['gender']
-            emp.Marital_status = request.POST['marital_status']
-            emp.Remaining_vacation_days = request.POST['vacation_left']
-            emp.Approved_vacation_days = request.POST['vacation_approved']
-            emp.Salary = request.POST['salary']
-            emp.Date_of_birth = request.POST['birth']
-            emp.delete()
-            return home(request)
+        emp = Employee.objects.get(ID = id)
+        emp.delete()
+        return redirect('home')
     else:
        return redirect('login')
 

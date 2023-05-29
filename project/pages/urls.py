@@ -13,4 +13,7 @@ urlpatterns = [
     path('addEmp/', views.addEmp, name='addEmp'),
     path('approveVac/<int:id>/', views.approveVac, name='approveVac'),
     path('declineVac/<int:id>/', views.declineVac, name='declineVac'),
+
+    path('updateEmp/<int:id>/', views.updateEmp, name='updateEmp'),
+    path('deleteEmp/<int:id>/', views.deleteEmp, name='deleteEmp'),
 ]

@@ -9,7 +9,8 @@
 <div class="content">
     <div class="container">
         <div class="form">
-            <form action="home.html" method="post">
+            <form action="{% url 'updateEmp' id=emp.ID %}" method="post">
+                {% csrf_token %}
                 <h2>Edit Employee</h2>
                 <label for="id">ID:</label>
                 <input type="number" name="id" placeholder="Id" value="{{emp.ID}}" required disabled><br>
@@ -27,11 +28,11 @@
                 <label for="marital_status">Marital Status:</label>
                 <select name="marital_status" id="marital_status">
                 <option value=""></option>
-                <option value="single" {% if emp.Marital_status == "single" %}selected{% endif %}>Single</option>
-                <option value="taken" {% if emp.Marital_status == "taken" %}selected{% endif %}>Taken</option>
-                <option value="married" {% if emp.Marital_status == "married" %}selected{% endif %}>Married</option>
-                <option value="divorced" {% if emp.Marital_status == "divorced" %}selected{% endif %}>Divorced</option>
-                <option value="widowed" {% if emp.Marital_status == "widowed" %}selected{% endif %}>Widowed</option>
+                    <option value="single" {% if emp.Marital_status == "single" %}selected{% endif %}>Single</option>
+                    <option value="taken" {% if emp.Marital_status == "taken" %}selected{% endif %}>Taken</option>
+                    <option value="married" {% if emp.Marital_status == "married" %}selected{% endif %}>Married</option>
+                    <option value="divorced" {% if emp.Marital_status == "divorced" %}selected{% endif %}>Divorced</option>
+                    <option value="widowed" {% if emp.Marital_status == "widowed" %}selected{% endif %}>Widowed</option>
                 </select><br>
                 <label for="vacation_left">Remaining Vacation Days:</label>
                 <input type="number" name="vacation_left" placeholder="Remaining Vacation Days" value="{{emp.Remaining_vacation_days}}" required><br>
@@ -41,7 +42,7 @@
                 <input type="text" name="salary" placeholder="Salary" value="{{emp.Salary}}" id="salary"><br>
                 <label for="birth">Date Of Birth:</label>
                 <input type="date" name="birth" placeholder="Date of Birth" value="{{emp.Date_of_birth|date:'Y-m-d'}}"><br><br>
-                <input class="sub" type="button" value="Delete" id="del">
+                <a href="{% url 'deleteEmp' id=emp.ID %}"><input class="sub" type="button" value="Delete" id="del"></a>
                 <input class="sub" type="submit" value="Update" id="update">
             </form>
         </div>
