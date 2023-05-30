@@ -1,6 +1,8 @@
+from os import name
 from django.shortcuts import render
 from .models import Employee, Vacation, Admin
 from django.shortcuts import redirect
+from datetime import datetime
 
 # Create your views here.
 
@@ -46,7 +48,42 @@ def vacations(request):
         return render(request, 'pages/vacations.html', context)
     else:
         return redirect('login')
+def addvac(request,id,name):
+   
+     if 'username' in request.session and not request.session['username'] == '':
+        if request.method == 'POST':
+            from_date_str = request.POST['from']
+            to_date_str = request.POST['to']
+            from_date = datetime.strptime(from_date_str, '%Y-%m-%d').date()
+            to_date = datetime.strptime(to_date_str, '%Y-%m-%d').date()
+            num_of_days = (to_date - from_date).days
+            
 
+            employee_id = id
+           
+            employee = Employee.objects.get(ID=employee_id)
+            remaining_vacation_days = employee.Remaining_vacation_days
+            
+
+            if from_date >= to_date:
+                error_message = "Choose a valid date range."
+                return render(request, 'pages/vacForm.html', {'emp': employee, 'error_message': error_message})
+            elif num_of_days > remaining_vacation_days:
+                error_message = "Not enough remaining vacation days."
+                return render(request, 'pages/vacForm.html', {'emp': employee, 'error_message': error_message})
+            else:
+                data = Vacation(
+                From =from_date,
+                To =to_date,
+                Reason=request.POST['reason'],
+                Employee_ID=employee,
+                Name=name
+                )
+            
+                data.save()
+                return redirect('home')
+     else:
+          return redirect('login')
 
 def index(request):
     return render(request, 'pages/index.html')
