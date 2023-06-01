@@ -86,3 +86,7 @@ footer {
 footer span {
     color: var(--turquoise);
 }
+
+nav #logout:hover {
+    background-color: #f72424;
+}

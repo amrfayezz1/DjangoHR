@@ -1,29 +1,38 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block styles %}
-<link rel="stylesheet" href="{% static 'style/vacform.css' %}">
-{% endblock styles %}
-
-{% block content %}
-<form action="{%url 'addvac' id=emp.ID name=emp.Name%}" method="post" id="vac-form" class="vacf" >
-    {% csrf_token %}
-    <h2>Submit Vacation Form:</h2>
+{% extends 'base.html' %} {% load static %} {% block styles %}
+<link rel="stylesheet" href="{% static 'style/vacform.css' %}" />
+{% endblock styles %} {% block content %}
+<form
+  action="{%url 'addvac' id=emp.ID name=emp.Name%}"
+  method="post"
+  id="vac-form"
+  class="vacf">
+  {% csrf_token %}
+  <h2>Submit Vacation Form:</h2>
+  <div>
     <label>ID: </label>
-    <input type="text" name="id" value="{{emp.ID}}" disabled><br>
+    <input type="text" name="id" value="{{emp.ID}}" disabled /><br />
+  </div>
+  <div>
     <label>Name: </label>
-    <input type="text" name="name" value="{{emp.Name}}" disabled><br>
+    <input type="text" name="name" value="{{emp.Name}}" disabled /><br />
+  </div>
+  <div>
     <label for="from">From Date: </label>
-    <input type="date" name="from" id="from" required> <br>
+    <input type="date" name="from" id="from" required /> <br />
+  </div>
+  <div>
     <label for="to">To Date: </label>
-    <input type="date" name="to" id="to" required> <br>
-    <label for="reason">Reason: </label><br>
-    <textarea name="reason" id="reason" cols="30" rows="10" placeholder="Enter reason for vacation"
-              required></textarea><br>
-    <input class="submit" type="submit" value="Submit">
+    <input type="date" name="to" id="to" required /> <br />
+  </div>
+<label for="reason">Reason: </label><br />
+<textarea
+    name="reason"
+    id="reason"
+    cols="30"
+    rows="10"
+    placeholder="Enter reason for vacation"
+    required></textarea
+><br />
+<input class="submit" type="submit" value="Submit" />
 </form>
-{% endblock content %}
-
-{% block scripts %}
-
-{% endblock scripts %}
+{% endblock content %} {% block scripts %} {% endblock scripts %}

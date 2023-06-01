@@ -19,7 +19,6 @@
     --darkturq: #4eb3b5;
 }
 
-
 body {
     background: var(--applewhite);
 }
@@ -28,7 +27,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 80vh; */
     margin: 30px auto;
 }
 
@@ -39,13 +37,9 @@ body {
     background: var(--turquoise);
     border-radius: 10px;
     box-shadow: 0 0 6px #3e3e3e;
-    padding: 10px;
+    padding: 15px;
     width: 600px;
     height: 500px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
 }
 
 .form h2 {
@@ -53,7 +47,6 @@ body {
     font-size: 35px;
     font-weight: 700;
     margin-bottom: 15px;
-
     text-align: center;
 }
 
@@ -70,14 +63,6 @@ body {
     cursor: pointer;
     transition: 0.5s;
     margin-bottom: 10px;
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
-    -ms-border-radius: 100px;
-    -o-border-radius: 100px;
 }
 
 .sub:hover {
@@ -95,54 +80,37 @@ body {
 
 }
 
-
-
-.form input[type=text] {
+.form input[type=text], .form input[type=number] {
     background-color: var(--applewhite);
-    border-radius: 10px;
-    border: 0.5px solid #0C243C;
+    border-radius: 5px;
+    border: 1px solid #0C243C;
     width: 45%;
-    height: 17px;
-    margin-top: 20px;
-
-
+    height: 25px;
+    padding-left: 10px;
 }
 
-.form input[type=number] {
-    background-color: var(--applewhite);
-    border-radius: 10px;
-    border: 0.5px solid #0C243C;
-    width: 45%;
-    height: 17px;
-    margin-top: 20px;
-
-
+select {
+    border-radius: 5px;
+    border: 1px solid #0C243C;
+    width: 50%;
+    height: 25px;
 }
 
 
 .form input[type=date] {
     background-color: var(--applewhite);
-    border-radius: 10px;
-    border: 0.5px solid #0C243C;
+    border-radius: 5px;
+    border: 1px solid #0C243C;
     width: 45%;
-    height: 20px;
-    margin-top: 20px;
-
-
+    height: 30px;
+    padding-left: 12px;
 }
 
 .form input[type=radio] {
     background-color: var(--applewhite);
-    border-radius: 2px;
-    border: 0.5px solid #0C243C;
     width: 15%;
     height: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 5px;
-    margin-right: 5px;
-
-
+    margin: 15px 2px;
 }
 
 .bg {
@@ -173,4 +141,12 @@ body {
     padding-top: 8px;
     text-align: center;
     border: 2px solid black;
+}
+
+.form div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
 }

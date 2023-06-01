@@ -23,11 +23,9 @@ td {
 .accept,
 .reject {
     background-color: var(--darkturq);
-    color: var(--applewhite);
     font-size: 15px;
     border-radius: 15px;
     border: none;
-    text-decoration: none;
     padding: 8px;
     cursor: pointer;
 }
@@ -45,4 +43,9 @@ td {
 .tData {
     margin: auto;
     overflow-x: auto;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--applewhite);
 }

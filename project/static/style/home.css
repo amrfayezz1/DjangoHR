@@ -15,6 +15,7 @@ table {
 .tData {
     margin: auto;
     overflow-x: auto;
+    margin-bottom: 20px;
 }
 
 th,
