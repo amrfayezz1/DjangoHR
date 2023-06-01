@@ -17,6 +17,5 @@ urlpatterns = [
     path('updateEmp/<int:id>/', views.updateEmp, name='updateEmp'),
     path('deleteEmp/<int:id>/', views.deleteEmp, name='deleteEmp'),
     path('vacForm/<int:id>/<str:name>', views.addvac, name='addvac'),
-
-
+    path('check_id/<int:id>', views.check_id, name='check_id'),
 ]

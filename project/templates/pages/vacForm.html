@@ -8,7 +8,9 @@
   class="vacf">
   {% csrf_token %}
   <h2>Submit Vacation Form:</h2>
+  <span style="color: red">{{error_message}}</span>
   <div>
+    <br>
     <label>ID: </label>
     <input type="text" name="id" value="{{emp.ID}}" disabled /><br />
   </div>

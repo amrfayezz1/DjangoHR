@@ -23,8 +23,8 @@ class Employee(models.Model):
     Address = models.CharField(max_length=100)
     Phone = models.CharField(max_length=11)
     Salary = models.CharField(max_length=20)
-    Date_of_birth = models.DateField()
-    Gender = models.CharField(max_length=6, choices=GENDER_CHOICES)
+    Date_of_birth = models.DateField(null=True)
+    Gender = models.CharField(max_length=6, choices=GENDER_CHOICES, null=True)
     Marital_status = models.CharField(
         max_length=10, choices=MARITAL_STATUS_CHOICES)
 

@@ -3,9 +3,13 @@ from django.shortcuts import render
 from .models import Employee, Vacation, Admin
 from django.shortcuts import redirect
 from datetime import datetime
+from django.http import JsonResponse
 
 # Create your views here.
-
+def check_id(request, id):
+    # Check if the ID exists in the employees registered
+    exists = Employee.objects.filter(ID=id).exists()
+    return JsonResponse({'exists': exists})
 
 def home(request):
     if 'username' in request.session and not request.session['username'] == '':
@@ -20,7 +24,8 @@ def home(request):
 
 def add(request):
     if 'username' in request.session and not request.session['username'] == '':
-        return render(request, 'pages/add.html')
+        employees = Employee.objects.all()
+        return render(request, 'pages/add.html', {'emps': employees})
     else:
         return redirect('login')
 
@@ -48,8 +53,8 @@ def vacations(request):
         return render(request, 'pages/vacations.html', context)
     else:
         return redirect('login')
+    
 def addvac(request,id,name):
-   
      if 'username' in request.session and not request.session['username'] == '':
         if request.method == 'POST':
             from_date_str = request.POST['from']
@@ -57,14 +62,9 @@ def addvac(request,id,name):
             from_date = datetime.strptime(from_date_str, '%Y-%m-%d').date()
             to_date = datetime.strptime(to_date_str, '%Y-%m-%d').date()
             num_of_days = (to_date - from_date).days
-            
-
             employee_id = id
-           
             employee = Employee.objects.get(ID=employee_id)
             remaining_vacation_days = employee.Remaining_vacation_days
-            
-
             if from_date >= to_date:
                 error_message = "Choose a valid date range."
                 return render(request, 'pages/vacForm.html', {'emp': employee, 'error_message': error_message})
@@ -79,7 +79,6 @@ def addvac(request,id,name):
                 Employee_ID=employee,
                 Name=name
                 )
-            
                 data.save()
                 return redirect('home')
      else:
