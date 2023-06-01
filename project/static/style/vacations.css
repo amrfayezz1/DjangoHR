@@ -46,12 +46,3 @@ td {
     margin: auto;
     overflow-x: auto;
 }
-
-
-.link {
-    text-decoration: none;
-    background-color: var(--darkturq);
-    color: var(--applewhite);
-    padding: 8px;
-    border-radius: 15px;
-}
