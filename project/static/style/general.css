@@ -58,11 +58,6 @@ nav a:hover {
     background-color: #3f9294;
 }
 
-nav #logout:hover {
-    color: var(--applewhite);
-    background-color: #f72424;
-}
-
 main {
     padding: 0 10%;
 }

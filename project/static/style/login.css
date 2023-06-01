@@ -98,10 +98,6 @@ body {
     border: 0.5px solid #0C243C;
     width: 100%;
     height: 25px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
 }
 
 .login input[type=password] {
@@ -142,7 +138,7 @@ img {
     top: 5px;
 }
 
-.error_login {
+.error_login{
     display: block;
     background-color: #fa4968;
     color: white;
