@@ -33,12 +33,12 @@
                 <td>{{vac.To}}</td>
                 <td>{{vac.Reason}}</td>
                 <td>{{vac.Status}}</td>
-                <td><button class='accept'>
+                <td>
                     <a class='link' href="{% url 'approveVac' id=vac.Employee_ID %}">Approve</a>
-                </button></td>
-                <td><button class='reject'>
+                </td>
+                <td>
                     <a class='link' href="{% url 'declineVac' id=vac.Employee_ID %}">Decline</a>
-                </button></td>
+                </td>
             </tr>
             {% endfor %}
         </tr>

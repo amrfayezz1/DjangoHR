@@ -47,5 +47,12 @@ td {
 
 .link {
     text-decoration: none;
+    background-color: var(--darkturq);
     color: var(--applewhite);
+    padding: 8px;
+    border-radius: 15px;
+}
+
+.link:hover {
+    background-color: var(--darkblue);
 }

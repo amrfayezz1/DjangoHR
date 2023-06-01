@@ -12,6 +12,10 @@
             <form action="{% url 'updateEmp' id=emp.ID %}" method="post">
                 {% csrf_token %}
                 <h2>Edit Employee</h2>
+                <span class="error" id="email-error" style="color: red;"></span>
+                <span class="error" id="phone-error" style="color: red;"></span>
+                <span class="error" id="vacation-days-error" style="color: red;"></span>
+                <span class="error" id="salary-error" style="color: red;"></span>
                 <label for="id">ID:</label>
                 <input type="number" name="id" placeholder="Id" value="{{emp.ID}}" required disabled><br>
                 <label for="name">Name:</label>
@@ -35,9 +39,9 @@
                     <option value="widowed" {% if emp.Marital_status == "widowed" %}selected{% endif %}>Widowed</option>
                 </select><br>
                 <label for="vacation_left">Remaining Vacation Days:</label>
-                <input type="number" name="vacation_left" placeholder="Remaining Vacation Days" value="{{emp.Remaining_vacation_days}}" required><br>
+                <input type="number" id='remaining-days' name="vacation_left" placeholder="Remaining Vacation Days" value="{{emp.Remaining_vacation_days}}" required><br>
                 <label for="vacation_approved">Approved Vacation Days:</label>
-                <input type="number" name="vacation_approved" placeholder="Approved Vacation Days" value="{{emp.Approved_vacation_days}}" required><br>
+                <input type="number" id= 'approved-days' name="vacation_approved" placeholder="Approved Vacation Days" value="{{emp.Approved_vacation_days}}" required><br>
                 <label for="salary">Salary:</label>
                 <input type="text" name="salary" placeholder="Salary" value="{{emp.Salary}}" id="salary"><br>
                 <label for="birth">Date Of Birth:</label>
@@ -51,5 +55,5 @@
 {% endblock content %}
 
 {% block scripts %}
-
+    <script src="{% static 'js/edit.js' %}"></script>
 {% endblock scripts %}
